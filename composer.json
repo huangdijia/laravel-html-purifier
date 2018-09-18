@@ -1,5 +1,5 @@
 {
-  "name": "mews/purifier",
+  "name": "huangdijia/laravel-html-purifier",
   "type": "package",
   "description": "Laravel 5 HtmlPurifier Package",
   "keywords": ["laravel5 HtmlPurifier", "laravel5 Purifier", "laravel5 Security", "HtmlPurifier", "Purifier", "security", "xss"],
