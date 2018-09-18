@@ -1,11 +1,11 @@
 <?php
 
-namespace Mews\Purifier\Facades;
+namespace Huangdijia\Purifier\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Mews\Purifier
+ * @see \Huangdijia\Purifier
  */
 class Purifier extends Facade
 {

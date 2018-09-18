@@ -1,19 +1,14 @@
 # HTMLPurifier for Laravel 5
 
-[![Build Status](https://scrutinizer-ci.com/g/mewebstudio/Purifier/badges/build.png?b=master)](https://scrutinizer-ci.com/g/mewebstudio/Purifier/build-status/master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/mewebstudio/Purifier/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/mewebstudio/Purifier/?branch=master)
+A simple [Laravel 5](http://www.laravel.com/) service provider for including the [HTMLPurifier for Laravel 5](https://github.com/huangdijia/laravel-html-purifier).
 
-A simple [Laravel 5](http://www.laravel.com/) service provider for including the [HTMLPurifier for Laravel 5](https://github.com/mewebstudio/purifier).
-
-for Laravel 4 [HTMLPurifier for Laravel 4](https://github.com/mewebstudio/Purifier/tree/master-l4)
-
-This package can be installed via [Composer](http://getcomposer.org) by 
-requiring the `mews/purifier` package in your project's `composer.json`:
+This package can be installed via [Composer](http://getcomposer.org) by requiring the `huangdijia/laravel-html-purifier` package in your project's `composer.json`:
 
 ```json
 {
     "require": {
         "laravel/framework": "~5.0",
-        "mews/purifier": "~2.0",
+        "huangdijia/laravel-html-purifier": "~2.1",
     }
 }
 ```
@@ -21,8 +16,9 @@ requiring the `mews/purifier` package in your project's `composer.json`:
 or
 
 Require this package with composer:
-```
-composer require mews/purifier
+
+```bash
+composer require huangdijia/laravel-html-purifier
 ```
 
 Update your packages with `composer update` or install with `composer install`.
@@ -32,13 +28,14 @@ Update your packages with `composer update` or install with `composer install`.
 To use the HTMLPurifier Service Provider, you must register the provider when bootstrapping your Laravel application. There are
 essentially two ways to do this.
 
-# For Laravel 5.0 to 5.4:
+### For Laravel 5.0 to 5.4
+
 Find the `providers` key in `config/app.php` and register the HTMLPurifier Service Provider.
 
 ```php
     'providers' => [
         // ...
-        Mews\Purifier\PurifierServiceProvider::class,
+        Huangdijia\Purifier\PurifierServiceProvider::class,
     ]
 ```
 
@@ -47,18 +44,21 @@ Find the `aliases` key in `app/config/app.php`.
 ```php
     'aliases' => [
         // ...
-        'Purifier' => Mews\Purifier\Facades\Purifier::class,
+        'Purifier' => Huangdijia\Purifier\Facades\Purifier::class,
     ]
 ```
 
-# For Laravel 5.5+: 
+### For Laravel 5.5+
+
 The service provider will be auto-discovered. You do not need to add the provider anywhere. 
 
 ## Configuration
 
 To use your own settings, publish config.
 
-```$ php artisan vendor:publish --provider="Mews\Purifier\PurifierServiceProvider"```
+```bash
+php artisan vendor:publish --provider="Huangdijia\Purifier\PurifierServiceProvider"
+```
 
 Config file `config/purifier.php` should like this
 
@@ -96,39 +96,39 @@ return [
                 ['aside',   'Block', 'Flow', 'Common'],
                 ['header',  'Block', 'Flow', 'Common'],
                 ['footer',  'Block', 'Flow', 'Common'],
-				
-				// Content model actually excludes several tags, not modelled here
+
+                // Content model actually excludes several tags, not modelled here
                 ['address', 'Block', 'Flow', 'Common'],
                 ['hgroup', 'Block', 'Required: h1 | h2 | h3 | h4 | h5 | h6', 'Common'],
-				
-				// http://developers.whatwg.org/grouping-content.html
+
+                // http://developers.whatwg.org/grouping-content.html
                 ['figure', 'Block', 'Optional: (figcaption, Flow) | (Flow, figcaption) | Flow', 'Common'],
                 ['figcaption', 'Inline', 'Flow', 'Common'],
-				
-				// http://developers.whatwg.org/the-video-element.html#the-video-element
+
+                // http://developers.whatwg.org/the-video-element.html#the-video-element
                 ['video', 'Block', 'Optional: (source, Flow) | (Flow, source) | Flow', 'Common', [
                     'src' => 'URI',
-					'type' => 'Text',
-					'width' => 'Length',
-					'height' => 'Length',
-					'poster' => 'URI',
-					'preload' => 'Enum#auto,metadata,none',
-					'controls' => 'Bool',
+                    'type' => 'Text',
+                    'width' => 'Length',
+                    'height' => 'Length',
+                    'poster' => 'URI',
+                    'preload' => 'Enum#auto,metadata,none',
+                    'controls' => 'Bool',
                 ]],
                 ['source', 'Block', 'Flow', 'Common', [
-					'src' => 'URI',
-					'type' => 'Text',
+                    'src' => 'URI',
+                    'type' => 'Text',
                 ]],
 
-				// http://developers.whatwg.org/text-level-semantics.html
+                // http://developers.whatwg.org/text-level-semantics.html
                 ['s',    'Inline', 'Inline', 'Common'],
                 ['var',  'Inline', 'Inline', 'Common'],
                 ['sub',  'Inline', 'Inline', 'Common'],
                 ['sup',  'Inline', 'Inline', 'Common'],
                 ['mark', 'Inline', 'Inline', 'Common'],
                 ['wbr',  'Inline', 'Empty', 'Core'],
-				
-				// http://developers.whatwg.org/edits.html
+
+                // http://developers.whatwg.org/edits.html
                 ['ins', 'Block', 'Flow', 'Common', ['cite' => 'URI', 'datetime' => 'CDATA']],
                 ['del', 'Block', 'Flow', 'Common', ['cite' => 'URI', 'datetime' => 'CDATA']],
             ],

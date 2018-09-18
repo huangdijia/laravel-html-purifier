@@ -1,9 +1,9 @@
 <?php
 
-namespace Mews\Tests\Purifier;
+namespace Huangdijia\Tests\Purifier;
 
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
-use Mews\Purifier\PurifierServiceProvider;
+use Huangdijia\Purifier\PurifierServiceProvider;
 
 abstract class AbstractTestCase extends AbstractPackageTestCase
 {

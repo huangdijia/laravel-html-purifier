@@ -3,13 +3,13 @@
   "type": "package",
   "description": "Laravel 5 HtmlPurifier Package",
   "keywords": ["laravel5 HtmlPurifier", "laravel5 Purifier", "laravel5 Security", "HtmlPurifier", "Purifier", "security", "xss"],
-  "homepage": "https://github.com/mewebstudio/purifier",
+  "homepage": "https://github.com/huangdijia/laravel-html-purifier",
   "license": "MIT",
   "authors": [
     {
-      "name": "Muharrem ERİN",
-      "email": "me@mewebstudio.com",
-      "homepage": "https://github.com/mewebstudio",
+      "name": "Huangdijia",
+      "email": "huangdijia@gmail.com",
+      "homepage": "https://github.com/huangdijia",
       "role": "Developer"
     }
   ],
@@ -32,7 +32,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Mews\\Purifier\\": "src/"
+      "Huangdijia\\Purifier\\": "src/"
     },
     "files": [
       "src/helpers.php"
@@ -40,16 +40,16 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Mews\\Tests\\Purifier\\": "tests/"
+      "Huangdijia\\Tests\\Purifier\\": "tests/"
     }
   },
     "extra": {
         "laravel": {
             "providers": [
-                "Mews\\Purifier\\PurifierServiceProvider"
+                "Huangdijia\\Purifier\\PurifierServiceProvider"
             ],
             "aliases": {
-                "Purifier": "Mews\\Purifier\\Facades\\Purifier"
+                "Purifier": "Huangdijia\\Purifier\\Facades\\Purifier"
             }
         }
     },

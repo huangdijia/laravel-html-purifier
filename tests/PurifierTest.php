@@ -1,11 +1,11 @@
 <?php
 
-namespace Mews\Tests\Purifier;
+namespace Huangdijia\Tests\Purifier;
 
 use HTMLPurifier;
 use Illuminate\Config\Repository;
 use Illuminate\Filesystem\Filesystem;
-use Mews\Purifier\Purifier;
+use Huangdijia\Purifier\Purifier;
 
 class PurifierTest extends AbstractTestCase
 {

@@ -1,4 +1,5 @@
-<?php namespace Mews\Purifier;
+<?php
+namespace Huangdijia\Purifier;
 
 use Illuminate\Container\Container;
 use Illuminate\Foundation\Application as LaravelApplication;
@@ -31,7 +32,7 @@ class PurifierServiceProvider extends ServiceProvider
      */
     protected function setupConfig()
     {
-        $source = realpath(__DIR__.'/../config/purifier.php');
+        $source = realpath(__DIR__ . '/../config/purifier.php');
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([$source => config_path('purifier.php')]);
         } elseif ($this->app instanceof LumenApplication) {
@@ -39,7 +40,6 @@ class PurifierServiceProvider extends ServiceProvider
         }
         $this->mergeConfigFrom($source, 'purifier');
     }
-
 
     /**
      * Register the service provider.

@@ -1,10 +1,10 @@
 <?php
 
-namespace Mews\Tests\Purifier\Facades;
+namespace Huangdijia\Tests\Purifier\Facades;
 
 use GrahamCampbell\TestBenchCore\FacadeTrait;
-use Mews\Purifier\Facades\Purifier;
-use Mews\Tests\Purifier\AbstractTestCase;
+use Huangdijia\Purifier\Facades\Purifier;
+use Huangdijia\Tests\Purifier\AbstractTestCase;
 
 class PurifierTest extends AbstractTestCase
 {
@@ -35,6 +35,6 @@ class PurifierTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return \Mews\Purifier\Purifier::class;
+        return \Huangdijia\Purifier\Purifier::class;
     }
 }
