@@ -50,7 +50,7 @@ Find the `aliases` key in `app/config/app.php`.
 
 ### For Laravel 5.5+
 
-The service provider will be auto-discovered. You do not need to add the provider anywhere. 
+The service provider will be auto-discovered. You do not need to add the provider anywhere.
 
 ## Configuration
 
