@@ -1,5 +1,9 @@
 # HTMLPurifier for Laravel 5
 
+[![Latest Stable Version](https://poser.pugx.org/huangdijia/laravel-html-purifier/version.png)](https://packagist.org/packages/huangdijia/laravel-html-purifier)
+[![Total Downloads](https://poser.pugx.org/huangdijia/laravel-html-purifier/d/total.png)](https://packagist.org/packages/huangdijia/laravel-html-purifier)
+
+
 A simple [Laravel 5](http://www.laravel.com/) service provider for including the [HTMLPurifier for Laravel 5](https://github.com/huangdijia/laravel-html-purifier).
 
 This package can be installed via [Composer](http://getcomposer.org) by requiring the `huangdijia/laravel-html-purifier` package in your project's `composer.json`:
